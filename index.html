@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+  <meta name="theme-color" content="#000000"/>
+  <meta name="apple-mobile-web-app-capable" content="yes"/>
+  <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+  <title>MAMPURU DAYCARE</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
+
+    body {
+        margin: 0;
+        height: 100%;
+        font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+        overflow: auto;
+        background-image: url('https://static.pexels.com/photos/414171/pexels-photo-414171.jpeg');
+        background-size: cover;
+        -webkit-animation: slidein 50s infinite alternate;
+        animation: slidein 50s infinite alternate;
+    }
+
+    @keyframes slidein {
+        from {background-position: top; background-size:3000px; }
+        to {background-position: -100px 0px;background-size:2750px;}
+    }
+
+    .center {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: rgba(75, 75, 250, 0.3);
+      border-radius: 3px;
+      padding: 10px;
+    }
+
+    .center h1{
+      text-align:center;
+      color:white;
+      font-family: 'Source Code Pro', monospace;
+      text-transform:uppercase;
+    }
+
+    .wave {
+      background: rgb(255 255 255 / 25%);
+      border-radius: 1000% 1000% 0 0;
+      position: fixed;
+      width: 200%;
+      height: 12em;
+      animation: wave 12s -2s linear infinite;
+      transform: translate3d(0, 0, 0);
+      opacity: 0.8;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .wave:nth-of-type(2) {
+      bottom: -1.25em;
+      animation: wave 20s linear reverse infinite;
+      opacity: 0.8;
+    }
+
+    .wave:nth-of-type(3) {
+      bottom: -2.5em;
+      animation: wave 24s -1s reverse infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes wave {
+      0% { transform: translateX(1); }
+      25% { transform: translateX(-25%); }
+      50% { transform: translateX(-50%); }
+      75% { transform: translateX(-25%); }
+      100% { transform: translateX(1); }
+    }
+
+    .container {
+      text-align: center;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+
+    .title {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      color: #ff8d24;
+    }
+
+    .tagline {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      color: #1eaae5;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      margin: 5px;
+      font-size: 1em;
+      color: #000;
+      background: #7cb63b;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .button:hover {
+      background: #6fa82e;
+    }
+
+    .button svg {
+      margin-right: 8px;
+    }
+
+    .label {
+      display: block;
+      font-size: 1em;
+      color: #ccc;
+      margin-bottom: 5px;
+    }
+
+    .label i {
+      margin-right: 5px;
+      color: #fff;
+    }
+
+    .collapsible {
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+
+    .active, .collapsible:hover {
+      background-color: #b2b1be;
+      padding: 20px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f100;
+      transition: max-height 0.2s ease-out;
+    }
+
+    .description, .topic, .designer-info p {
+      color: white;
+    }
+
+    .typewriter {
+      border-right: 0.1em solid #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: typing 2s steps(12) infinite, blink 0.5s step-end infinite alternate;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 8em }
+    }
+
+    .custom-button {
+      background-color: #dfdfdf;
+    } .label,
+  .button {
+    display: inline-block;
+    vertical-align: middle;
+  }
+  </style>
+</head>
+<body>
+  <div class="center">
+    <div class="container">
+      <div id="daycare" class="title">MAMPURU DAYCARE</div>
+      <div class="tagline">A Beautiful Place to Grow</div>
+      
+      <button class="button collapsible custom-button">About Mampuru Daycare <i class="fas fa-chevron-down" style="margin-left: 11px;"></i></button>
+      <div class="content">
+        <p class="description"><strong>Mampuru DayCare</strong> is dedicated to providing a nurturing 
+          and educational environment for children. With services including daycare, aftercare, night care, 
+          and babysitting, we cater to the diverse needs of busy families. At Mampuru Day Care, we believe in
+          fostering a space where every day is an opportunity for children to learn, play, and grow.</p>
+      </div>
+      
+      <div id="daycare" class="title">M&M's cakes</div>
+      <div class="tagline">Crafting sweet delights,<br> one delicious bite at a time.</div>
+      
+      <button class="button collapsible custom-button">About M&M's Cakes <i class="fas fa-chevron-down" style="margin-left: 11px;"></i></button>
+      <div class="content">
+        <p class="description"><strong>M&M Cakes</strong>  is a home-based bakery located at Magobading House No. 025,
+          dedicated to creating a delightful array of baked goods, including cakes, biscuits, muffins, scones, 
+          and more. Our passion for baking shines through in every treat we prepare, as we strive to bring a 
+          touch of sweetness and joy to every occasion.</p>
+      </div>
+
+      <button class="button collapsible custom-button">Contact Details <i class="fas fa-chevron-down" style="margin-left: 11px;"></i></button>
+      <div class="content">
+        <div id="contact" class="contact">
+          <div class="label">
+            <i class="fas fa-phone"></i> Main Number:
+          </div>
+          <a href="tel:+27766771261" class="button">076 677 1261</a>
+          <div class="label">
+            <i class="fas fa-phone"></i> Management Number:
+          </div>
+          <a href="tel:+27829617433" class="button">082 961 7433</a>
+          <div class="label">
+            <i class="far fa-envelope"></i> Email:
+          </div>
+          <a href="mailto:mapurudaycare22@gmail.com" class="button" target="_blank">mapurudaycare22@gmail.com</a>
+          <div class="label">
+            <i class="fab fa-facebook"></i> Facebook Page:
+          </div>
+          <a href="https://www.facebook.com/share/Vib3JhJ1EUQpwhcc/?mibextid=LQQJ4d" class="button" target="_blank">Go To Our FaceBook Page</a>
+          <div class="label">
+            <i class="fab fa-whatsapp"></i> WhatsApp Chat:
+          </div>
+          <a href="https://wa.me/27766771261" class="button" target="_blank">Chat On WhatsApp</a>
+        </div>
+        <div class="label">
+          <i class="fas fa-map-marker-alt"></i> Location: 025 Magobading, <br>1129, South Africa
+        </div>
+        <a href="https://maps.app.goo.gl/vAJJ2v7Rzs3Z5Lhz5" class="button" target="_blank">View on Map</a>
+      </div>
+
+      <h2 class="topic">Designer's Information</h2>
+      
+      <button class="button collapsible custom-button">About Designer <i class="fas fa-chevron-down" style="margin-left: 11px;"></i></button>
+      <div class="content">
+        <div class="designer-info">
+          <p>Brilliant Malepe is a versatile designer known for crafting impactful logos,
+            captivating posters, dynamic animated videos, and user-friendly apps. With a 
+            keen eye for aesthetics and a passion for creativity, Brilliant brings your 
+            ideas to life with precision and flair.
+          </p>
+          <p>In addition to design services, Brilliant also offers a curated selection of top-notch 
+            smartphones, including iPhones, Android phones such as Samsung, Huawei, and other models,
+            along with a variety of laptops to suit your digital needs. Ensure you have the tools you
+            need to succeed in the digital realm with Brilliant's.</p>
+        </div>
+      </div>
+      <button class="button collapsible custom-button">Designer's Contact details <i class="fas fa-chevron-down" style="margin-left: 11px;"></i></button>
+      <div class="content">
+        <div class="label">
+          <i class="fas fa-phone"></i> Contact Number:
+        </div>
+        <a href="tel:+27726171976" class="button" target="_blank">0726171976</a>
+        <div class="label">
+          <i class="far fa-envelope"></i> Email:
+        </div>
+        <a href="mailto:malepebrilliant03@gmail.com" class="button" target="_blank">malepebrilliant03@gmail.com</a>
+        <div class="label">
+          <i class="fab fa-instagram"></i> Designer's Instagram:
+        </div>
+        <a href="https://www.instagram.com/malepe_brilliant/" class="button" target="_blank">Instagram</a>
+        <div class="label">
+          <i class="fab fa-whatsapp"></i> WhatsApp Chat:
+        </div>
+        <a href="https://wa.me/27726171976" class="button" target="_blank">Chat with the Designer</a>
+
+        
+    </div>
+    <div class="container">
+        <div class="label">
+          <i class="fas fa-code"></i> Coded by:
+        </div>
+        <a href="https://www.instagram.com/malepe_brilliant/" class="button" target="_blank">Malepe Brilliant</a>
+      </div>
+  </div>
+
+  <script>
+    var coll = document.querySelectorAll(".collapsible");
+
+    coll.forEach(function(item) {
+      item.addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+          content.style.display = "none";
+        } else {
+          content.style.display = "block";
+        }
+      });
+    });
+  </script>
+  <div class="wave"></div>
+  <div class="wave"></div>
+  <div class="wave"></div>
+</body>
+</html>
